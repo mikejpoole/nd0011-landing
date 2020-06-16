@@ -41,10 +41,7 @@ function addSection() {
 }
 
 function scrollToSection(event) {
-    console.log('button clicked', event);
-    let path = event.path[0];
-
-    const id = path.innerText.slice(8);
+    const id = event.path[0].innerText.slice(8);
     
     var elActive = document.getElementsByClassName('your-active-class');        // set the active class here and remove it from others
     while(elActive.length > 0){

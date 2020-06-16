@@ -13,32 +13,22 @@ const latin = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi f
 
 function addSection() {
     const sectionCount = elNav.childElementCount;
-    console.log('There are', sectionCount, 'sections.');
+    // console.log('There are', sectionCount, 'sections.');
 
     const sectionID = sectionCount + 1;
 
-    console.log('Adding section', sectionID);
-
-    // Add the nav button
-    const newNavItem = document.createElement('li');
+    const newNavItem = document.createElement('li');                        // Add the nav button
     newNavItem.setAttribute('id', 'button' + sectionID);
     newNavItem.innerText = 'Section ' + sectionID;
 
     elNav.appendChild(newNavItem);
 
-
-    
-    // Listen to the button
-    newNavItem.addEventListener('click', scrollToSection);
+    newNavItem.addEventListener('click', scrollToSection);                  // Listen to the button
 
 
-
-
-    // Add the content
-    const newSection = document.createElement('section');
+    const newSection = document.createElement('section');                   // Add the content
     newSection.setAttribute('id', 'section' + sectionID);
     newSection.setAttribute('data-nav', 'Section ' + sectionID);
-
 
     const newContainer = document.createElement('div');
     newContainer.classList.add('landing__container');

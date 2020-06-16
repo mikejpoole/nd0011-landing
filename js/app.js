@@ -28,11 +28,12 @@ function addSection() {
 
     // Add the content
     const newSection = document.createElement('section');
-    newSection.innerText = 'Section ' + sectionID + ' will go here...';
+    newSection.setAttribute('id', 'section' + sectionID);
+    newSection.setAttribute('data-nav', 'Section ' + sectionID);
+
 
     const newContainer = document.createElement('div');
     newContainer.classList.add('landing__container');
-
 
     const newHeading = document.createElement('h2');
     newHeading.textContent = `Section ${sectionID}`;
@@ -49,18 +50,7 @@ function addSection() {
 
     newSection.appendChild(newContainer);
     elMain.appendChild(newSection);
-
-    // <section id="section1" data-nav="Section 1" class="your-active-class">
-    //     <div class="landing__container">
-    //       <h2>Section 1</h2>
-    //       <p></p>
-  
-    //       <p></p>
-    //     </div>
-    //   </section>
-
 }
-
 
 
 // build the nav
@@ -68,9 +58,9 @@ for (let i = 1; i <= 4; i++) {
     addSection();
 }
 
-
-
 // Add class 'active' to section when near top of viewport
+const firstSection = document.getElementById('section1');
+firstSection.classList.add('your-active-class')
 
 
 // Scroll to anchor ID using scrollTO event

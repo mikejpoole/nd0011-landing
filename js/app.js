@@ -6,8 +6,6 @@ const latin = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi f
 
 function addSection() {
     const sectionCount = elNav.childElementCount;
-    // console.log('There are', sectionCount, 'sections.');
-
     const sectionID = sectionCount + 1;
 
     const newNavItem = document.createElement('li');                        // Add the nav button
@@ -17,7 +15,6 @@ function addSection() {
     elNav.appendChild(newNavItem);
 
     newNavItem.addEventListener('click', scrollToSection);                  // Listen to the button
-
 
     const newSection = document.createElement('section');                   // Add the content
     newSection.setAttribute('id', 'section' + sectionID);
@@ -37,46 +34,31 @@ function addSection() {
 
     const newPara2 = document.createElement('p');
     newPara2.textContent = latin[1];
-    newContainer.appendChild(newPara2);    
-
-    // add the two latin lines
-    // latin.forEach(lat => {
-    //     newPara.textContent = lat;
-    //     newContainer.appendChild(newPara);
-    // });
+    newContainer.appendChild(newPara2);
 
     newSection.appendChild(newContainer);
     elMain.appendChild(newSection);
 }
 
-
 function scrollToSection(event) {
     console.log('button clicked', event);
     let path = event.path[0];
 
-    console.log(path);
     const id = path.innerText.slice(8);
-
-    console.log('Scrolling to section', id);
-
-
     
     var elActive = document.getElementsByClassName('your-active-class');        // set the active class here and remove it from others
     while(elActive.length > 0){
         elActive[0].classList.remove('your-active-class');
     }
 
-    const section = document.getElementById("section" + id);   
-
-
+    const section = document.getElementById("section" + id);
     section.classList.add('your-active-class');
-    section.scrollIntoView(false);  // alignTo is set to false so whole of section is displayed
+    section.scrollIntoView();                                   // alignTo is set to false so whole of section is displayed
 }
-
 
 for (let i = 1; i <= 4; i++) {                                  // start off by adding the sections
     addSection();
 }
 
 const firstSection = document.getElementById('section1');       // Add class 'active' to section when near top of viewport
-firstSection.classList.add('your-active-class')
+firstSection.classList.add('your-active-class');

@@ -27,8 +27,10 @@ function addSection() {
 // build the nav
 
 
+for (let i = 0; i <= 4; i++) {
+    addSection();
+}
 
-addSection();
 
 
 // Add class 'active' to section when near top of viewport

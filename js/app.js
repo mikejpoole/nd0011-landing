@@ -55,6 +55,7 @@ function scrollToSection(event) {
     let path = event.path[0];
 
     console.log(path);
+    console.log(path.innerText);
 
     const section = document.getElementById("section3");        // todo = hardcoded section 3 as example
 //    section.scrollIntoView(false);  // alignTo is set to false so whole of section is displayed

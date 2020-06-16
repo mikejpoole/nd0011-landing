@@ -1,16 +1,8 @@
 /**
- * 
  * Manipulating the DOM exercise.
  * Exercise programmatically builds navigation,
  * scrolls to anchors from navigation,
  * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
 */
 
 /**
@@ -25,6 +17,11 @@
  * 
 */
 
+function addSection(sectionID) {
+    console.log('Adding section', sectionID);
+
+}
+
 
 
 /**
@@ -34,6 +31,10 @@
 */
 
 // build the nav
+const nav = document.querySelector('navbar__list');
+console.log(nav.childElementCount);
+
+addSection(1);
 
 
 // Add class 'active' to section when near top of viewport

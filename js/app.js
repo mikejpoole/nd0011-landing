@@ -21,6 +21,7 @@ function addSection() {
 
     // Add the nav button
     const newNavItem = document.createElement('li');
+    newNavItem.setAttribute('id', 'button' + sectionID);
     newNavItem.innerText = 'Section ' + sectionID;
 
     elNav.appendChild(newNavItem);
@@ -28,7 +29,7 @@ function addSection() {
 
     
     // Listen to the button
-    newNavItem.addEventListener('click', buttonClick(sectionID));
+    newNavItem.addEventListener('click', buttonClick);
 
 
 
@@ -66,8 +67,8 @@ function addSection() {
 }
 
 
-function buttonClick(sectionID) {
-    console.log('button clicked', sectionID);
+function buttonClick(event) {
+    console.log('button clicked', event);
 }
 
 

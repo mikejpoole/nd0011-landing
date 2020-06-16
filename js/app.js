@@ -5,36 +5,31 @@
  * and highlights section in viewport upon scrolling.
 */
 
-/**
- * Define Global Variables
- * 
-*/
+const nav = document.querySelector('#navbar__list');
 
 
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
 
-function addSection(sectionID) {
+function addSection() {
+    const sectionCount = nav.childElementCount;
+    console.log('There are', sectionCount, 'sections.');
+
+    const sectionID = sectionCount + 1;
+
     console.log('Adding section', sectionID);
 
+    const newNavItem = document.createElement('li');
+    newNavItem.innerText = 'Section ' + sectionID;
+
+    nav.appendChild(newNavItem);
 }
 
 
 
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
 // build the nav
-const nav = document.querySelector('navbar__list');
-console.log(nav.childElementCount);
 
-addSection(1);
+
+
+addSection();
 
 
 // Add class 'active' to section when near top of viewport

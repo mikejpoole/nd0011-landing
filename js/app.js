@@ -40,13 +40,19 @@ function addSection() {
 
     newContainer.appendChild(newHeading);
 
-    const newPara = document.createElement('p');
+    const newPara1 = document.createElement('p');
+    newPara1.textContent = lat[0];
+    newContainer.appendChild(newPara1);
+
+    const newPara2 = document.createElement('p');
+    newPara2.textContent = latin[1];
+    newContainer.appendChild(newPara2);    
 
     // add the two latin lines
-    latin.forEach(lat => {
-        newPara.textContent = lat;
-        newContainer.appendChild(newPara);
-    });
+    // latin.forEach(lat => {
+    //     newPara.textContent = lat;
+    //     newContainer.appendChild(newPara);
+    // });
 
     newSection.appendChild(newContainer);
     elMain.appendChild(newSection);

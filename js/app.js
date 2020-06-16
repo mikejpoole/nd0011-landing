@@ -60,10 +60,16 @@ function scrollToSection(event) {
     console.log('Scrolling to section', id);
 
 
-    // to do = set the active class here and remove it from others
+    
+    var elActive = document.getElementsByClassName('your-active-class');        // set the active class here and remove it from others
+    while(elActive.length > 0){
+        elActive[0].classList.remove('your-active-class');
+    }
+
+    const section = document.getElementById("section" + id);   
 
 
-    const section = document.getElementById("section" + id);        // todo = hardcoded section 3 as example
+    section.classList.add('your-active-class');
     section.scrollIntoView(false);  // alignTo is set to false so whole of section is displayed
 }
 

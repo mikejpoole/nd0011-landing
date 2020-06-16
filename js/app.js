@@ -1,10 +1,3 @@
-/**
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
-*/
-
 const elNav = document.querySelector('#navbar__list');
 const elMain = document.querySelector('main');
 
@@ -59,38 +52,18 @@ function addSection() {
 
 function scrollToSection(event) {
     console.log('button clicked', event);
-
     let path = event.path[0];
 
+    console.log(path);
 
     const section = document.getElementById("section3");        // todo = hardcoded section 3 as example
 //    section.scrollIntoView(false);  // alignTo is set to false so whole of section is displayed
 }
 
 
-// build the nav
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i <= 4; i++) {                                  // build the nav
     addSection();
 }
 
-// Add class 'active' to section when near top of viewport
-const firstSection = document.getElementById('section1');
+const firstSection = document.getElementById('section1');       // Add class 'active' to section when near top of viewport
 firstSection.classList.add('your-active-class')
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
-

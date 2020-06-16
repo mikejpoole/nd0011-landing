@@ -29,7 +29,7 @@ function addSection() {
 
     
     // Listen to the button
-    newNavItem.addEventListener('click', buttonClick);
+    newNavItem.addEventListener('click', scrollToSection);
 
 
 
@@ -67,8 +67,11 @@ function addSection() {
 }
 
 
-function buttonClick(event) {
+function scrollToSection(event) {
     console.log('button clicked', event);
+
+    const section = document.getElementById("section3");        // todo = hardcoded section 3 as example
+    section.scrollIntoView();
 }
 
 

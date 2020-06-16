@@ -26,7 +26,7 @@ function addSection() {
     // Add the content
     const newSection = document.createElement('section');
     newSection.innerText = 'Section ' + sectionID + ' will go here...';
-    elMain.appendChild(newNavItem);
+    elMain.appendChild(newSection);
 
     // <section id="section1" data-nav="Section 1" class="your-active-class">
     //     <div class="landing__container">

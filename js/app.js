@@ -5,12 +5,11 @@
  * and highlights section in viewport upon scrolling.
 */
 
-const nav = document.querySelector('#navbar__list');
-
+const elNav = document.querySelector('#navbar__list');
 
 
 function addSection() {
-    const sectionCount = nav.childElementCount;
+    const sectionCount = elNav.childElementCount;
     console.log('There are', sectionCount, 'sections.');
 
     const sectionID = sectionCount + 1;
@@ -20,7 +19,7 @@ function addSection() {
     const newNavItem = document.createElement('li');
     newNavItem.innerText = 'Section ' + sectionID;
 
-    nav.appendChild(newNavItem);
+    elNav.appendChild(newNavItem);
 }
 
 

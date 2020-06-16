@@ -69,9 +69,11 @@ function addSection() {
 
 function scrollToSection(event) {
     console.log('button clicked', event);
+    console.log('button', event.path[0]);
+
 
     const section = document.getElementById("section3");        // todo = hardcoded section 3 as example
-    section.scrollIntoView();
+//    section.scrollIntoView(false);  // alignTo is set to false so whole of section is displayed
 }
 
 

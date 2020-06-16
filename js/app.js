@@ -55,14 +55,16 @@ function scrollToSection(event) {
     let path = event.path[0];
 
     console.log(path);
-    console.log(path.innerText);
+    const id = path.innerText.slice(8);
 
-    const section = document.getElementById("section3");        // todo = hardcoded section 3 as example
-//    section.scrollIntoView(false);  // alignTo is set to false so whole of section is displayed
+    console.log('Scrolling to section', id);
+
+    const section = document.getElementById("section" + id);        // todo = hardcoded section 3 as example
+    section.scrollIntoView(false);  // alignTo is set to false so whole of section is displayed
 }
 
 
-for (let i = 1; i <= 4; i++) {                                  // build the nav
+for (let i = 1; i <= 4; i++) {                                  // start off by adding the sections
     addSection();
 }
 

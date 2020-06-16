@@ -64,7 +64,8 @@ section {
 .navbar__menu li {
     display: inline-block;
     background: black;
-    padding: 20px;
+    padding: 20px 10px;
+    font-size: 14px;
     margin: 0px 3px;
     cursor: pointer;
 }

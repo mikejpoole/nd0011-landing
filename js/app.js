@@ -59,6 +59,10 @@ function scrollToSection(event) {
 
     console.log('Scrolling to section', id);
 
+
+    // to do = set the active class here and remove it from others
+
+
     const section = document.getElementById("section" + id);        // todo = hardcoded section 3 as example
     section.scrollIntoView(false);  // alignTo is set to false so whole of section is displayed
 }

@@ -26,6 +26,13 @@ function addSection() {
     elNav.appendChild(newNavItem);
 
 
+    
+    // Listen to the button
+    newNavItem.addEventListener('click', buttonClick(sectionID));
+
+
+
+
     // Add the content
     const newSection = document.createElement('section');
     newSection.setAttribute('id', 'section' + sectionID);
@@ -41,7 +48,7 @@ function addSection() {
     newContainer.appendChild(newHeading);
 
     const newPara1 = document.createElement('p');
-    newPara1.textContent = lat[0];
+    newPara1.textContent = latin[0];
     newContainer.appendChild(newPara1);
 
     const newPara2 = document.createElement('p');
@@ -56,6 +63,11 @@ function addSection() {
 
     newSection.appendChild(newContainer);
     elMain.appendChild(newSection);
+}
+
+
+function buttonClick(sectionID) {
+    console.log('button clicked', sectionID);
 }
 
 

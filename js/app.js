@@ -43,7 +43,7 @@ function addSection() {
 
 function scrollToSection(event) {
     const id = event.path[0].innerText.slice(8);
-    changeSection(id);
+    updateSection(id);
     section.scrollIntoView({behavior: "smooth"});
 }
 
@@ -61,7 +61,7 @@ function setActive(event) {
 
             // Apply active state on the current section and the corresponding Nav link.
             if (currentSection !== section.id){
-                changeSection(section.id);
+                updateSection(section.id);
             }
         } else {
           // Remove active state from other section and corresponding Nav link.
@@ -70,7 +70,9 @@ function setActive(event) {
 }
 
 // When the user enters a new section this is triggered
-function changeSection(sectionId) {
+function updateSection(sectionId) {
+    console.log(sectionId);
+    sectionId.replace('section','');
     console.log(sectionId);
     currentSection = sectionId;
 

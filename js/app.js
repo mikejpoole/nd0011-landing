@@ -42,8 +42,11 @@ function addSection() {
 }
 
 function scrollToSection(event) {
-    const id = event.path[0].innerText.slice(8);
-    updateSection(id);
+    const sectionId = event.path[0].innerText.slice(8);
+    makeSectionActive(sectionId);
+
+    // Scroll
+    const section = document.getElementById("section" + sectionId);
     section.scrollIntoView({behavior: "smooth"});
 }
 
@@ -60,17 +63,15 @@ function setActive(event) {
             // console.log(section.id);
 
             // Apply active state on the current section and the corresponding Nav link.
-            if (currentSection !== section.id){
-                updateSection(section.id);
+            if (currentSection !== section.id) {
+                makeSectionActive(section.id);
             }
-        } else {
-          // Remove active state from other section and corresponding Nav link.
         }
       }
 }
 
-// When the user enters a new section this is triggered
-function updateSection(sectionId) {
+
+function makeSectionActive(sectionId) {                                         // Triggered when the user enters a new section
     // console.log(sectionId);
     sectionId = sectionId.replace('section','');
     console.log('section', sectionId);

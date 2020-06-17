@@ -42,20 +42,46 @@ function addSection() {
 
 function scrollToSection(event) {
     const id = event.path[0].innerText.slice(8);
-    
-    var elActive = document.getElementsByClassName('your-active-class');        // set the active class here and remove it from others
+
+    // remove active class from all and set the active class to one button clicked on (this was not what was required)
+    var elActive = document.getElementsByClassName('your-active-class');
     while(elActive.length > 0){
         elActive[0].classList.remove('your-active-class');
     }
 
     const section = document.getElementById("section" + id);
     section.classList.add('your-active-class');
-    section.scrollIntoView();                                   // alignTo is set to false so whole of section is displayed
+    
+    section.scrollIntoView({behavior: "smooth"});
 }
 
-for (let i = 1; i <= 4; i++) {                                  // start off by adding the sections
+
+function setActive(event) {
+    const sections = document.getElementsByTagName('section');
+
+    for (const section of sections) {
+        const box = section.getBoundingClientRect();
+        console.log(box.top);
+        // You can play with the values in the "if" condition to further make it more accurate. 
+        if (box.top <= 150 && box.bottom >= 150) {
+          // Apply active state on the current section and the corresponding Nav link.
+        } else {
+          // Remove active state from other section and corresponding Nav link.
+        }
+      }
+}
+
+
+for (let i = 1; i <= 4; i++) {                                                  // start off by adding the sections
     addSection();
 }
 
-const firstSection = document.getElementById('section1');       // Add class 'active' to section when near top of viewport
+const firstSection = document.getElementById('section1');                       // Add class 'active' to section when near top of viewport
 firstSection.classList.add('your-active-class');
+
+
+
+// Set up the scroll listener
+document.addEventListener('scroll', function() {
+    setActive();
+  });

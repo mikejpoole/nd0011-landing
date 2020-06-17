@@ -63,7 +63,7 @@ function setActive(event) {
             // console.log(section.id);
 
             // Apply active state on the current section and the corresponding Nav link.
-            if (currentSection !== section.id) {
+            if (+currentSection !== +section.id) {
                 makeSectionActive(section.id);
             }
         }

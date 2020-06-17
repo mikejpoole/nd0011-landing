@@ -45,52 +45,34 @@ function scrollToSection(event) {
     const sectionId = event.path[0].innerText.slice(8);
     makeSectionActive(sectionId);
 
-    // Scroll
-    const section = document.getElementById("section" + sectionId);
+    const section = document.getElementById("section" + sectionId);             // Scroll
     section.scrollIntoView({behavior: "smooth"});
 }
 
-
 function setActive(event) {
-    const sections = document.getElementsByTagName('section');
+    // const sections = document.getElementsByTagName('section');
 
-    for (const section of sections) {
-        const box = section.getBoundingClientRect();
-        // console.log(box.top);
-
-        // You can play with the values in the "if" condition to further make it more accurate. 
-        if (box.top <= 150 && box.bottom >= 150) {
-            // console.log(section.id);
-
-            // Apply active state on the current section and the corresponding Nav link.
-            if (+currentSection !== +section.id) {
-                makeSectionActive(section.id);
-            }
+    for (const section of document.getElementsByTagName('section')) {
+        const bb = section.getBoundingClientRect();
+        if (bb.top <= 125 && bb.bottom >= 125 && +currentSection !== +section.id) {
+            makeSectionActive(section.id);
         }
       }
 }
 
-
 function makeSectionActive(sectionId) {                                         // Triggered when the user enters a new section
-    // console.log(sectionId);
     sectionId = sectionId.replace('section','');
     console.log('section', sectionId);
     currentSection = sectionId;
 
-    // remove active class from all sections
-    var elActive = document.getElementsByClassName('your-active-class');
+    var elActive = document.getElementsByClassName('your-active-class');        // remove active class from all sections
     while(elActive.length > 0){
         elActive[0].classList.remove('your-active-class');
     }
 
-    // set the active class on the current section
-    const section = document.getElementById("section" + sectionId);
+    const section = document.getElementById("section" + sectionId);             // set the active class on the current section
     section.classList.add('your-active-class');
-
-
-    // todo: set active classes on nav buttons too
 }
-
 
 for (let i = 1; i <= 4; i++) {                                                  // start off by adding the sections
     addSection();
@@ -98,8 +80,6 @@ for (let i = 1; i <= 4; i++) {                                                  
 
 const firstSection = document.getElementById('section1');                       // Add class 'active' to section when near top of viewport
 firstSection.classList.add('your-active-class');
-
-
 
 // Set up the scroll listener
 document.addEventListener('scroll', function() {

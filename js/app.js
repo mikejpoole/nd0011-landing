@@ -62,8 +62,10 @@ function setActive(event) {
     for (const section of sections) {
         const box = section.getBoundingClientRect();
         console.log(box.top);
+
         // You can play with the values in the "if" condition to further make it more accurate. 
         if (box.top <= 150 && box.bottom >= 150) {
+            console.log(section.id);
           // Apply active state on the current section and the corresponding Nav link.
         } else {
           // Remove active state from other section and corresponding Nav link.

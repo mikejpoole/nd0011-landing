@@ -62,6 +62,7 @@ function makeSectionActive(sectionId) {                                         
     sectionId = sectionId.replace('section','');
     currentSection = sectionId;
 
+    // SECTIONS
     var elActive = document.getElementsByClassName('your-active-class');        // remove active class from all sections
     while(elActive.length > 0){
         elActive[0].classList.remove('your-active-class');
@@ -69,6 +70,16 @@ function makeSectionActive(sectionId) {                                         
 
     const section = document.getElementById("section" + sectionId);             // set the active class on the current section
     section.classList.add('your-active-class');
+
+    // BUTTONS
+    var elActive = document.getElementsByClassName('selected');                 // remove active class from all nav buttons
+    while(elActive.length > 0){
+        elActive[0].classList.remove('selected');
+    }
+
+    const button = document.getElementById("button" + sectionId);               // set the active class on the current nav button
+    button.classList.add('selected');
+
 }
 
 for (let i = 1; i <= 4; i++) {                                                  // start off by adding the sections

@@ -1,5 +1,6 @@
 const elNav = document.querySelector('#navbar__list');
 const elMain = document.querySelector('main');
+const currentSection = 1;
 
 const latin = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.',
 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.'];
@@ -42,16 +43,7 @@ function addSection() {
 
 function scrollToSection(event) {
     const id = event.path[0].innerText.slice(8);
-
-    // remove active class from all and set the active class to one button clicked on (this was not what was required)
-    var elActive = document.getElementsByClassName('your-active-class');
-    while(elActive.length > 0){
-        elActive[0].classList.remove('your-active-class');
-    }
-
-    const section = document.getElementById("section" + id);
-    section.classList.add('your-active-class');
-    
+    changeSection(id);
     section.scrollIntoView({behavior: "smooth"});
 }
 
@@ -66,11 +58,34 @@ function setActive(event) {
         // You can play with the values in the "if" condition to further make it more accurate. 
         if (box.top <= 150 && box.bottom >= 150) {
             console.log(section.id);
-          // Apply active state on the current section and the corresponding Nav link.
+
+            // Apply active state on the current section and the corresponding Nav link.
+            if (currentSection !== section.id){
+                changeSection(section.id);
+            }
         } else {
           // Remove active state from other section and corresponding Nav link.
         }
       }
+}
+
+// When the user enters a new section this is triggered
+function changeSection(sectionId) {
+    console.log(sectionId);
+    currentSection = sectionId;
+
+    // remove active class from all sections
+    var elActive = document.getElementsByClassName('your-active-class');
+    while(elActive.length > 0){
+        elActive[0].classList.remove('your-active-class');
+    }
+
+    // set the active class on the current section
+    const section = document.getElementById("section" + sectionId);
+    section.classList.add('your-active-class');
+
+
+    // todo: set active classes on nav buttons too
 }
 
 

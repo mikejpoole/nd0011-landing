@@ -86,8 +86,12 @@ for (let i = 1; i <= 4; i++) {                                                  
     addSection();
 }
 
-const firstSection = document.getElementById('section1');                       // Add class 'active' to section when near top of viewport
+// Set the initial active states
+const firstSection = document.getElementById('section1');
 firstSection.classList.add('your-active-class');
+
+const firstButton = document.getElementById('button1');
+firstButton.classList.add('selected');
 
 // Set up the scroll listener
 document.addEventListener('scroll', function() {

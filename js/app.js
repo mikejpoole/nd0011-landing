@@ -57,7 +57,7 @@ function setActive(event) {
 
         // You can play with the values in the "if" condition to further make it more accurate. 
         if (box.top <= 150 && box.bottom >= 150) {
-            console.log(section.id);
+            // console.log(section.id);
 
             // Apply active state on the current section and the corresponding Nav link.
             if (currentSection !== section.id){
@@ -71,9 +71,9 @@ function setActive(event) {
 
 // When the user enters a new section this is triggered
 function updateSection(sectionId) {
-    console.log(sectionId);
-    sectionId.replace('section','');
-    console.log(sectionId);
+    // console.log(sectionId);
+    sectionId = sectionId.replace('section','');
+    console.log('section', sectionId);
     currentSection = sectionId;
 
     // remove active class from all sections

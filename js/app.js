@@ -62,7 +62,6 @@ function setActive(event) {
 
 function makeSectionActive(sectionId) {                                         // Triggered when the user enters a new section
     sectionId = sectionId.replace('section','');
-    console.log('section', sectionId);
     currentSection = sectionId;
 
     var elActive = document.getElementsByClassName('your-active-class');        // remove active class from all sections

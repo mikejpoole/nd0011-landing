@@ -50,8 +50,6 @@ function scrollToSection(event) {
 }
 
 function setActive(event) {
-    // const sections = document.getElementsByTagName('section');
-
     for (const section of document.getElementsByTagName('section')) {
         const bb = section.getBoundingClientRect();
         if (bb.top <= 125 && bb.bottom >= 125 && +currentSection !== +section.id) {

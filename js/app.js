@@ -53,7 +53,7 @@ function setActive(event) {
 
     for (const section of sections) {
         const box = section.getBoundingClientRect();
-        console.log(box.top);
+        // console.log(box.top);
 
         // You can play with the values in the "if" condition to further make it more accurate. 
         if (box.top <= 150 && box.bottom >= 150) {
